@@ -9,6 +9,10 @@
 
 
 
+.textCenter {
+    text-align: center;
+}
+
 /* Admin Portal */
 
 .admin-container {
@@ -84,14 +88,15 @@
 
 
 /* navbar */
-.navbar {
+.navbar1 {
+    /* position: fixed; */
     width: 100%;
     height: 8vh;
     background-image: linear-gradient(to left, #3a7bd5, #3a6073);
     box-shadow: 0px 1px 10px #999;
 }
 
-.navbar button {
+.navbar1 button {
     width: 17vh;
     height: 5vh;
     float: right;
@@ -104,10 +109,11 @@
     font-weight: bold;
     color: #3a7bd5;
     background-color: lavender;
-    transition:all 0.3s ;
+    transition: all 0.3s;
 
 }
-.navbar button:hover{
+
+.navbar1 button:hover {
     background-color: #6392d4;
     color: white;
 }
@@ -123,9 +129,9 @@
 }
 
 .main .sidebar {
+    /* position: fixed; */
     width: 20%;
     height: 100%;
-    /* margin-top: 2px; */
     border-top: 2px solid #6392d4;
     background-image: linear-gradient(to right, #3a7bd5, #3a6073);
 }
@@ -155,23 +161,26 @@
     transition: background-image 1s;
     text-align: left;
 }
-.panel-navigation button:hover{
+
+.panel-navigation button:hover {
     background-image: linear-gradient(to right, #6392d4, #6392d4);
 
 }
-.panel-navigation button i{
+
+.panel-navigation button i {
     font-size: 24px;
     vertical-align: middle;
     margin: 0 30px 0 10px;
 }
 
 
-.user-detail{
+.user-detail {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.user-detail img{
+
+.user-detail img {
     background-color: lavender;
     border-radius: 40px;
     width: 50px;
@@ -179,9 +188,332 @@
     /* border: 1px solid #fff; */
     padding: 2px;
 }
-.user-detail span{
+
+.user-detail span {
     color: #fff;
     font-size: 16px;
     font-weight: bold;
 }
 
+.createClassBtn {
+    background-color: #6392d4 !important;
+    color: lavender;
+    position: absolute;
+    right: 50px;
+    top: 30px;
+}
+
+.createClass {
+
+    position: relative;
+}
+
+.modal-size {
+    width: 750px !important;
+    background-color: lavender !important;
+}
+
+.row input {
+    width: 40%;
+    height: 35px;
+    margin: 10px 15px 10px 40px;
+    padding: 0 10px;
+    border-radius: 7px;
+    outline: none;
+    border: none;
+    background-color: #6392d43e;
+}
+
+.row input::placeholder {
+    color: black;
+}
+
+.textCenter h4 {
+    color: black;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.submitBtn {
+    width: 17vh !important;
+    height: 5vh !important;
+    margin: 8px 20px 10px 0 !important;
+    outline: none !important;
+    border: none !important;
+    border-radius: 7px !important;
+    cursor: pointer !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: #fff !important;
+    background-color: #6392d4 !important;
+    transition: all 0.3s !important;
+}
+
+.footer {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.class-record {
+    padding: 15px;
+    margin: 14vh 20vh;
+}
+
+
+.class-record table tr th {
+    background-color: #6392d4;
+    color: white;
+}
+
+.class-record table tr th,
+.class-record table tr td {
+    border: 1px solid white;
+    padding: 15px 20px;
+}
+
+.class-record table tr td {
+    background-color: rgba(153, 153, 153, 0.193);
+}
+
+.switchClasses {
+    display: none !important;
+}
+
+.addStudent {
+    width: 100%;
+    height: 100%;
+}
+
+.student-info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.row1 input {
+    width: 400px;
+    height: 45px;
+    margin: 20px 20px;
+    padding: 15px 30px 15px 30px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    background-color: #6392d464;
+}
+
+.row1 input::placeholder {
+    color: black;
+    font-size: 14px;
+}
+
+.row1 select {
+    background-color: #6392d464;
+    width: 95.5%;
+    padding: 15px 30px 15px 30px;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    /* margin-right: px; */
+}
+
+label {
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 600px;
+}
+
+#fileLabel {
+    background-color: #3a7bd5b3;
+    padding: 12px;
+    border-radius: 7px;
+    color: white;
+    cursor: pointer;
+    /* width: 200px; */
+    /* height: 200px; */
+}
+
+input[type="file"] {
+    margin: 0;
+    display: none !important;
+}
+
+.studentSubmit {
+    display: flex;
+    justify-content: center;
+
+}
+
+.studentSubmit button {
+    width: 120px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: #3a7bd5;
+    border-radius: 7px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+/* Search Bar */
+.searchbar{
+    margin-right: 20px;
+}
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: end;
+    margin: 20px 30px 0 0px;
+}
+
+
+.searchTerm {
+    width: 45vh;
+    border: none;
+    padding: 5px 10px;
+    height: 40px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.searchTerm:focus {
+    color: #00B4CC;
+}
+
+.searchButton {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #3a7bd5;
+    background: #3a7bd5;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+
+
+/*         Student Cart      */
+/* .studentCart{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.studentCartContent{
+    width: 60vh;
+    height: 70vh;
+    background-color: #00B4CC;
+} */
+
+h4 {
+	margin: 0px 5px;
+    text-align: left;
+    padding-left: 90px;
+}
+h4 span{
+    margin: 50px;
+}
+h3{
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: black !important;
+    text-align: center;
+    padding-top: 7px;
+}
+h3 span{
+    margin: 50px;
+}
+
+h5 {
+	margin: 15px 10px;
+
+}
+
+p {
+	font-size: 14px;
+	line-height: 21px;
+}
+.round{
+    width: 100px;
+
+}
+.Attendance{
+    height: 80%;
+}
+.course{
+    height: 30px;
+    background-color: lavender;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.card-container {
+	background-image:linear-gradient(to right, #3a7bd5, #3a6073) ;
+	border-radius: 5px;
+	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+	color: #B3B8CD;
+	padding: 10vh 0 0 0;
+	position: relative;
+	width: 350px;
+	max-width: 100%;
+	text-align: center;
+
+}
+
+.card-container .pro {
+	color: #231E39;
+	background-color: #FEBB0B;
+	border-radius: 3px;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 3px 7px;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+.card-container .round {
+	border: 1px solid #03BFCB;
+	border-radius: 50%;
+	padding: 7px;
+}
+
+button.primary {
+	background-color: #03BFCB;
+	border: 1px solid #03BFCB;
+	border-radius: 3px;
+	color: #231E39;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+	padding: 10px 25px;
+}
+
+button.primary.ghost {
+	background-color: transparent;
+	color: #02899C;
+}
+
+.studentCart{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
