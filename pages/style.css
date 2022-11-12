@@ -1,48 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
+
+
 /* Admin Portal */
 
-.admin-container{
+.admin-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-image:linear-gradient(to right,#3a7bd5,#3a6073);
+    background-image: linear-gradient(to right, #3a7bd5, #3a6073);
 }
 
-.admin-content{
+.admin-content {
     width: 35%;
     height: 60%;
     background-color: lavender;
     border-radius: 6px;
 }
-.admin-content{
+
+.admin-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.admin-content img{
-    width: 80px;
-    height: 80px;
+.admin-content img {
+    width: 12vh;
+    height: 12vh;
 }
-.admin-login-info{
+
+.admin-login-info {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.admin-login-info input{
-    width: 300px;
-    height: 30px;
+.admin-login-info input {
+    width: 45vh;
+    height: 5vh;
     margin: 15px 0;
     outline: none;
     border-radius: 8px;
@@ -51,26 +56,132 @@
     font-size: 15px;
 }
 
-.admin-login-info input:focus{
+.admin-login-info input:focus {
     border: none;
     border-radius: 0;
     border-bottom: 2px solid #3a6073;
 }
 
-.admin-login-info button{
-    width: 120px;
-    height: 35px;
+.admin-login-info button {
+    width: 17vh;
+    height: 5vh;
     outline: none;
     border-radius: 7px;
     border: none;
-    background-image:linear-gradient(to right,#3a7bd5,#3a6073);
-    color:#fff;
+    background-image: linear-gradient(to right, #3a7bd5, #3a6073);
+    color: #fff;
     font-size: 15px;
     cursor: pointer;
     font-weight: 600;
     transition: 0.2s ease;
 }
 
-.admin-login-info button:hover{
+.admin-login-info button:hover {
     transform: scale(1.01);
 }
+
+/* Dashboard Panel */
+
+
+/* navbar */
+.navbar {
+    width: 100%;
+    height: 8vh;
+    background-image: linear-gradient(to left, #3a7bd5, #3a6073);
+    box-shadow: 0px 1px 10px #999;
+}
+
+.navbar button {
+    width: 17vh;
+    height: 5vh;
+    float: right;
+    margin: 8px 20px 10px 0;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #3a7bd5;
+    background-color: lavender;
+    transition:all 0.3s ;
+
+}
+.navbar button:hover{
+    background-color: #6392d4;
+    color: white;
+}
+
+
+
+/* panel main */
+
+.main {
+    width: 100%;
+    height: 92vh;
+    display: flex;
+}
+
+.main .sidebar {
+    width: 20%;
+    height: 100%;
+    /* margin-top: 2px; */
+    border-top: 2px solid #6392d4;
+    background-image: linear-gradient(to right, #3a7bd5, #3a6073);
+}
+
+.main .panel-content {
+    width: 80%;
+    height: 100%;
+    background-color: lavender;
+}
+
+/* Side Bar */
+
+
+
+.panel-navigation button {
+    list-style-type: none;
+    width: 100%;
+    background-image: linear-gradient(to right, #6392d4, #466a7c);
+    margin: 8px 0px 8px 0px;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    transition: background-image 1s;
+    text-align: left;
+}
+.panel-navigation button:hover{
+    background-image: linear-gradient(to right, #6392d4, #6392d4);
+
+}
+.panel-navigation button i{
+    font-size: 24px;
+    vertical-align: middle;
+    margin: 0 30px 0 10px;
+}
+
+
+.user-detail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user-detail img{
+    background-color: lavender;
+    border-radius: 40px;
+    width: 50px;
+    margin: 15px 10px 10px 0;
+    /* border: 1px solid #fff; */
+    padding: 2px;
+}
+.user-detail span{
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
