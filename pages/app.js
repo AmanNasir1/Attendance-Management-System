@@ -23,7 +23,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
-// const storage = getStorage(app);
 
 
 
@@ -51,20 +50,6 @@ window.onload = () => {
             const uid = user.uid;
             showClassDetails()
             showStudent()
-            // const q = query(collection(db, "class Details"));
-            // const querySnapshot = await getDocs(q);
-            // querySnapshot.forEach((doc) => {
-            //     console.log(doc.id, " => ", doc.data());
-
-            //     tableContent.innerHTML += `<tr>
-            //         <td>${doc.data().class_time}</td>
-            //         <td>${doc.data().schedule}</td>
-            //         <td>${doc.data().teacher_name}</td>
-            //         <td>${doc.data().course}</td>
-            //         <td>${doc.data().section}</td>
-            //         <td>${doc.data().batch}</td>
-            //     </tr>`
-            // });
 
 
         } else {
@@ -84,11 +69,11 @@ logOut?.addEventListener("click", () => {
     });
 
 })
-
 const submitBtn = document.getElementById("submitBtn");
 if (submitBtn) {
 
     submitBtn.addEventListener("click", async () => {
+
         const time = document.querySelector("#classTime");
         const schedule = document.querySelector("#schedule")
         const teacher = document.querySelector("#teacher")
@@ -104,7 +89,7 @@ if (submitBtn) {
             batch: batch.value
         });
         console.log("Document written with ID: ", docRef.id);
-        // showClassDetails()
+
         console.log("chlgya")
 
         window.location = "panel.html"
@@ -115,13 +100,12 @@ if (submitBtn) {
 
 
 const showClassDetails = async () => {
-    // const q = query(collection(db, "class Details"));
+    const q = query(collection(db, "class Details"));
 
-    //     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-    //         const cities = [];
-    //         querySnapshot.forEach((doc) => {
-    //             const tableContent = document.getElementById("tt")
-    //             tableContent.innerHTML += `<tr>
+    // const unsubscribe = onSnapshot(q, (querySnapshot) => {
+    //     querySnapshot.forEach((doc) => {
+    //         const tableContent = document.getElementById("tt")
+    //         tableContent.innerHTML += `<tr>
     //                  <td>${doc.data().class_time}</td>
     //                  <td>${doc.data().schedule}</td>
     //                  <td>${doc.data().teacher_name}</td>
@@ -129,8 +113,8 @@ const showClassDetails = async () => {
     //                  <td>${doc.data().section}</td>
     //                  <td>${doc.data().batch}</td>
     //              </tr>`
-    //         })
     //     })
+    // })
     const a = query(collection(db, "class Details"));
     const querySnapshot = await getDocs(a);
     querySnapshot.forEach((doc) => {
@@ -142,8 +126,9 @@ const showClassDetails = async () => {
         <td>${doc.data().class_time}</td>
         <td>${doc.data().batch}</td>
         <td>${doc.data().section}</td>
+        <td><button class="updateBtn"><i class="fa-solid fa-pen"></i></button</td>
+        <td><button class="updateBtn"><i class="fa-solid fa-trash-can"></i></button</td>
                  </tr>`
-        // console.log(doc.id, " => ", doc.data());
     });
 
 
@@ -160,34 +145,46 @@ var div1 = document.querySelector("#createClass")
 var div2 = document.querySelector("#addStudent")
 var div3 = document.querySelector("#Attendance")
 var div4 = document.querySelector("#StudentDetails")
-btn1.addEventListener("click", () => {
-    div1.classList.remove("switchClasses")
-    div2.classList.add("switchClasses")
-    div3.classList.add("switchClasses")
-    div4.classList.add("switchClasses")
+if (btn1) {
+
+    btn1.addEventListener("click", () => {
+        div1.classList.remove("switchClasses")
+        div2.classList.add("switchClasses")
+        div3.classList.add("switchClasses")
+        div4.classList.add("switchClasses")
 
 
-})
-btn2.addEventListener("click", () => {
-    div2.classList.remove("switchClasses")
-    div1.classList.add("switchClasses")
-    div3.classList.add("switchClasses")
-    div4.classList.add("switchClasses")
+    })
+}
+if (btn2) {
 
-})
-btn3.addEventListener("click", () => {
-    div1.classList.add("switchClasses")
-    div2.classList.add("switchClasses")
-    div3.classList.remove("switchClasses")
-    div4.classList.add("switchClasses")
+    btn2.addEventListener("click", () => {
+        div2.classList.remove("switchClasses")
+        div1.classList.add("switchClasses")
+        div3.classList.add("switchClasses")
+        div4.classList.add("switchClasses")
 
-})
-btn4.addEventListener("click", () => {
-    div1.classList.add("switchClasses")
-    div2.classList.add("switchClasses")
-    div3.classList.add("switchClasses")
-    div4.classList.remove("switchClasses")
-})
+    })
+}
+if (btn3) {
+
+    btn3.addEventListener("click", () => {
+        div1.classList.add("switchClasses")
+        div2.classList.add("switchClasses")
+        div3.classList.remove("switchClasses")
+        div4.classList.add("switchClasses")
+
+    })
+}
+if (btn4) {
+
+    btn4.addEventListener("click", () => {
+        div1.classList.add("switchClasses")
+        div2.classList.add("switchClasses")
+        div3.classList.add("switchClasses")
+        div4.classList.remove("switchClasses")
+    })
+}
 
 
 
@@ -195,28 +192,32 @@ btn4.addEventListener("click", () => {
 
 
 const studentSubmit = document.querySelector("#submitStudent")
-studentSubmit.addEventListener("click", async () => {
-    const studentName = document.querySelector("#studentName");
-    const FatherName = document.querySelector("#Fname");
-    const RollNumber = document.querySelector("#RollNumber");
-    const ContactNumber = document.querySelector("#ContactNumber");
-    const Cnic = document.querySelector("#Cnic");
-    const select = document.querySelector("select");
-    const fileLabel = document.querySelector("#fileInput");
-    const fileInput = fileLabel.files[0]
-    const url = await uploadFiles(fileInput)
-    const docRef = await addDoc(collection(db, "Student Details"), {
-        studentName: studentName.value,
-        FatherName: FatherName.value,
-        RollNumber: RollNumber.value,
-        ContactNumber: ContactNumber.value,
-        Cnic: Cnic.value,
-        select: select.value,
-        ProfilePicture: url
-    });
-    console
-    // console.log(fileInput)
-})
+if (studentSubmit) {
+
+    studentSubmit.addEventListener("click", async () => {
+        const studentName = document.querySelector("#studentName");
+        const FatherName = document.querySelector("#Fname");
+        const RollNumber = document.querySelector("#RollNumber");
+        const ContactNumber = document.querySelector("#ContactNumber");
+        const Cnic = document.querySelector("#Cnic");
+        const select = document.querySelector("select");
+        const fileLabel = document.querySelector("#fileInput");
+        const fileInput = fileLabel.files[0]
+        const url = await uploadFiles(fileInput)
+        const docRef = await addDoc(collection(db, "Student Details"), {
+            studentName: studentName.value,
+            FatherName: FatherName.value,
+            RollNumber: RollNumber.value,
+            ContactNumber: ContactNumber.value,
+            Cnic: Cnic.value,
+            select: select.value,
+            ProfilePicture: url
+        });
+        // console.log(fileInput)
+        window.location = "panel.html"
+    })
+
+}
 
 
 
@@ -264,31 +265,34 @@ const uploadFiles = (file) => {
 
 
 const searchbtn = document.querySelector("#searchStudentBtn")
-searchbtn.addEventListener("click", async () => {
-    const searchValue = document.querySelector("#searchStudent")
-    const q = query(collection(db, "Student Details"), where("RollNumber", "==", searchValue.value));
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-        console.log(doc.data().studentName)
-        const cardInfo = document.querySelector(".card-container")
-        cardInfo.innerHTML = `<img class="round" src="${doc.data().ProfilePicture}"/>
+if (searchbtn) {
+
+    searchbtn.addEventListener("click", async () => {
+        const searchValue = document.querySelector("#searchStudent")
+        const q = query(collection(db, "Student Details"), where("RollNumber", "==", searchValue.value));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            console.log(doc.data().studentName)
+            const cardInfo = document.querySelector(".card-container")
+            cardInfo.innerHTML = `<img class="round" src="${doc.data().ProfilePicture}"/>
         <div>
         <h4>Name: <span>${doc.data().studentName}</span></h4>
         <h4>Roll No: <span>${doc.data().RollNumber}</span></h4>
+        </div>
+        <div>
+        <h5>Cnic: <span>${doc.data().Cnic}</span></h5>
+        <h5>Phone Number: <span>${doc.data().ContactNumber}</span></h5>
      </div>
-     <div>
-         <h5>Cnic: <span>${doc.data().Cnic}</span></h5>
-         <h5>Phone Number: <span>${doc.data().ContactNumber}</span></h5>
+     <div class="course">
+     <h3>${doc.data().select}</h3>
      </div>
-         <div class="course">
-         <h3>${doc.data().select}</h3>
-         </div>
      </div>`
-        //     console.log(doc.id, " => ", doc.data());
+            //     console.log(doc.id, " => ", doc.data());
 
-    });
+        });
 
-})
+    })
+}
 
 //  Student Details Info
 
@@ -304,6 +308,9 @@ const showStudent = async () => {
                      <td>${doc.data().RollNumber}</td>
                      <td>${doc.data().ContactNumber}</td>
                      <td>${doc.data().select}</td>
+                     <td>P P A A P </td>
+                     <td ><button class="updateBtn"><i class="fa-solid fa-pen"></i></button></td>
+                     <td ><button class="updateBtn"><i class="fa-solid fa-trash-can"></i></button></td>
                  </tr>`
         // console.log(doc.id, " => ", doc.data());
     });

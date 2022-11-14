@@ -407,18 +407,7 @@ input[type="file"] {
 
 
 /*         Student Cart      */
-/* .studentCart{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-}
 
-.studentCartContent{
-    width: 60vh;
-    height: 70vh;
-    background-color: #00B4CC;
-} */
 
 h4 {
 	margin: 0px 5px;
@@ -474,26 +463,20 @@ p {
 	position: relative;
 	width: 350px;
 	max-width: 100%;
-	text-align: center;
+    text-align: center;
 
 }
 
-.card-container .pro {
-	color: #231E39;
-	background-color: #FEBB0B;
-	border-radius: 3px;
-	font-size: 14px;
-	font-weight: bold;
-	padding: 3px 7px;
-	position: absolute;
-	top: 30px;
-	left: 30px;
-}
 
 .card-container .round {
-	border: 1px solid #03BFCB;
+	border: 2px solid #fff;
 	border-radius: 50%;
 	padding: 7px;
+    transition: all 0.2s;
+}
+.card-container .round:hover{
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.27);
+
 }
 
 button.primary {
@@ -516,4 +499,24 @@ button.primary.ghost {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.updateBtn{
+    width: 60px;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    background-color: #6392d4;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 5px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition:all 0.5s;
+}
+.updateBtn:hover{
+    background-image:linear-gradient(to right, #3a7bd5, #3a6073) ;
+
 }
